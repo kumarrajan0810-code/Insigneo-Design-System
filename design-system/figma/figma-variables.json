@@ -6,7 +6,7 @@
     "$description": "Raw design values. Do not use directly in designs — use Semantic or Component tokens instead.",
     "$modes": ["Value"],
 
-    "color/brand/navy-blue":       { "Value": "#142641" },
+    "color/brand/navy-blue":       { "Value": "#0D1846" },
     "color/brand/bone-blue":       { "Value": "#E7F1F3" },
     "color/brand/insigneo-blue":   { "Value": "#00B3E6" },
     "color/brand/sky-blue":        { "Value": "#A1E3FB" },

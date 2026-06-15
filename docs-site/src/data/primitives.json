@@ -5,7 +5,7 @@
     "$description": "All color primitives extracted from brand guidelines pages 24–27.",
 
     "brand": {
-      "navy-blue": { "$value": "#142641", "$type": "color", "$description": "Primary brand color. Trust, stability, professionalism." },
+      "navy-blue": { "$value": "#0D1846", "$type": "color", "$description": "Primary brand color. Trust, stability, professionalism." },
       "bone-blue": { "$value": "#E7F1F3", "$type": "color", "$description": "Secondary brand color. Soft, sophisticated backgrounds." },
       "insigneo-blue": { "$value": "#00B3E6", "$type": "color", "$description": "Accent. Innovation, clarity, forward-thinking." },
       "sky-blue": { "$value": "#A1E3FB", "$type": "color", "$description": "Accent. Freshness, openness, visual lightness." }
