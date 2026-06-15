@@ -1,0 +1,8 @@
+{
+  "name": "insigneo-design-system",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd docs-site && npm install && npm run build"
+  }
+}
