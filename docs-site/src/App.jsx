@@ -248,14 +248,14 @@ export default function App() {
                   if (data.$value) {
                     return (
                       <div key={key} style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-4)', padding: 'var(--spacing-2) 0', borderBottom: '1px solid var(--border-subtle)' }}>
-                        <div style={{ width: '120px', fontFamily: 'var(--font-family-mono)', fontSize: 'var(--font-size-sm)', fontWeight: 'bold' }}>{key}</div>
+                        <div style={{ flex: 1, fontFamily: 'var(--font-family-mono)', fontSize: 'var(--font-size-sm)', fontWeight: 'bold' }}>{key}</div>
                         <div style={{ fontFamily: 'var(--font-family-mono)', fontSize: 'var(--font-size-sm)', color: 'var(--text-secondary)' }}>{data.$value}</div>
                       </div>
                     );
                   } else {
                     return Object.entries(data).filter(([k]) => !k.startsWith('$')).map(([subKey, subData]) => (
                       <div key={`${key}-${subKey}`} style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-4)', padding: 'var(--spacing-2) 0', borderBottom: '1px solid var(--border-subtle)' }}>
-                        <div style={{ width: '120px', fontFamily: 'var(--font-family-mono)', fontSize: 'var(--font-size-sm)', fontWeight: 'bold' }}>{key}.{subKey}</div>
+                        <div style={{ flex: 1, fontFamily: 'var(--font-family-mono)', fontSize: 'var(--font-size-sm)', fontWeight: 'bold' }}>{key}.{subKey}</div>
                         <div style={{ fontFamily: 'var(--font-family-mono)', fontSize: 'var(--font-size-sm)', color: 'var(--text-secondary)' }}>{subData.$value}</div>
                       </div>
                     ));
