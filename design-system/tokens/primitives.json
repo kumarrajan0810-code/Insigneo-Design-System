@@ -1,0 +1,269 @@
+{
+  "$description": "Insigneo Design System — Primitive Tokens. Source: Insigneo Brand Guidelines PDF. Format: W3C Design Token Community Group (DTCG).",
+
+  "color": {
+    "$description": "All color primitives extracted from brand guidelines pages 24–27.",
+
+    "brand": {
+      "navy-blue": { "$value": "#0D1846", "$type": "color", "$description": "Primary brand color. Trust, stability, professionalism." },
+      "bone-blue": { "$value": "#E7F1F3", "$type": "color", "$description": "Secondary brand color. Soft, sophisticated backgrounds." },
+      "insigneo-blue": { "$value": "#00B3E6", "$type": "color", "$description": "Accent. Innovation, clarity, forward-thinking." },
+      "sky-blue": { "$value": "#A1E3FB", "$type": "color", "$description": "Accent. Freshness, openness, visual lightness." }
+    },
+
+    "blue": {
+      "$description": "9-step blue gradient scale (page 27).",
+      "50":  { "$value": "#E9F4FE", "$type": "color" },
+      "100": { "$value": "#D2F0FF", "$type": "color" },
+      "200": { "$value": "#A1E3FB", "$type": "color" },
+      "300": { "$value": "#00B7EB", "$type": "color" },
+      "400": { "$value": "#0389C3", "$type": "color" },
+      "500": { "$value": "#0666A4", "$type": "color" },
+      "600": { "$value": "#003D66", "$type": "color" },
+      "700": { "$value": "#0E233F", "$type": "color" },
+      "800": { "$value": "#021729", "$type": "color" }
+    },
+
+    "neutral": {
+      "$description": "9-step neutral gradient scale (page 27).",
+      "50":  { "$value": "#F6F5F9", "$type": "color" },
+      "100": { "$value": "#E6E6E8", "$type": "color" },
+      "200": { "$value": "#D7D7DB", "$type": "color" },
+      "300": { "$value": "#C1C1C6", "$type": "color" },
+      "400": { "$value": "#ACACAD", "$type": "color" },
+      "500": { "$value": "#868A93", "$type": "color" },
+      "600": { "$value": "#52585E", "$type": "color" },
+      "700": { "$value": "#2C323A", "$type": "color" },
+      "800": { "$value": "#1C232D", "$type": "color" }
+    },
+
+    "teal": {
+      "$description": "5-step teal scale (page 27). Charts & data.",
+      "100": { "$value": "#C1EAE6", "$type": "color" },
+      "200": { "$value": "#3ECEC6", "$type": "color" },
+      "300": { "$value": "#31A49E", "$type": "color" },
+      "400": { "$value": "#27827D", "$type": "color" },
+      "500": { "$value": "#133E3C", "$type": "color" }
+    },
+
+    "gold": {
+      "$description": "5-step gold scale (page 27). Charts & data.",
+      "100": { "$value": "#EFDCBF", "$type": "color" },
+      "200": { "$value": "#D4B893", "$type": "color" },
+      "300": { "$value": "#D2AB7A", "$type": "color" },
+      "400": { "$value": "#AE916A", "$type": "color" },
+      "500": { "$value": "#634927", "$type": "color" }
+    },
+
+    "lime": {
+      "$description": "5-step lime/green scale (page 27). Positive performance indicators.",
+      "100": { "$value": "#D0E5CE", "$type": "color" },
+      "200": { "$value": "#AAD493", "$type": "color" },
+      "300": { "$value": "#79B858", "$type": "color" },
+      "400": { "$value": "#487237", "$type": "color" },
+      "500": { "$value": "#284725", "$type": "color" }
+    },
+
+    "coral": {
+      "$description": "5-step coral/red scale (page 27). Negative performance indicators.",
+      "100": { "$value": "#E2C0C0", "$type": "color" },
+      "200": { "$value": "#DB9191", "$type": "color" },
+      "300": { "$value": "#DA5959", "$type": "color" },
+      "400": { "$value": "#A82A2A", "$type": "color" },
+      "500": { "$value": "#721616", "$type": "color" }
+    },
+
+    "amber": {
+      "$description": "5-step amber scale (page 27). Charts & warnings.",
+      "100": { "$value": "#EFDCBF", "$type": "color" },
+      "200": { "$value": "#F1C77C", "$type": "color" },
+      "300": { "$value": "#E0A734", "$type": "color" },
+      "400": { "$value": "#B07A26", "$type": "color" },
+      "500": { "$value": "#79500B", "$type": "color" }
+    },
+
+    "purple": {
+      "$description": "5-step purple scale (page 27). Charts & data.",
+      "100": { "$value": "#E7E5F2", "$type": "color" },
+      "200": { "$value": "#B8B5C6", "$type": "color" },
+      "300": { "$value": "#89849B", "$type": "color" },
+      "400": { "$value": "#59546F", "$type": "color" },
+      "500": { "$value": "#2A2343", "$type": "color" }
+    },
+
+    "static": {
+      "$description": "Colors that do not change between light/dark modes.",
+      "white": { "$value": "#FFFFFF", "$type": "color" },
+      "black": { "$value": "#000000", "$type": "color" },
+      "transparent": { "$value": "#00000000", "$type": "color" }
+    }
+  },
+
+  "font": {
+    "$description": "Typography primitives. Inter as the single app typeface.",
+
+    "family": {
+      "primary": { "$value": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif", "$type": "fontFamily", "$description": "Primary app typeface. Used across all UI." },
+      "display": { "$value": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif", "$type": "fontFamily", "$description": "Display typeface. Same as primary for now; placeholder for future brand display font." },
+      "mono": { "$value": "'SF Mono', 'Roboto Mono', 'Fira Code', monospace", "$type": "fontFamily", "$description": "Monospace for numerical data, codes, etc." }
+    },
+
+    "weight": {
+      "light":     { "$value": 300, "$type": "fontWeight" },
+      "regular":   { "$value": 400, "$type": "fontWeight" },
+      "medium":    { "$value": 500, "$type": "fontWeight" },
+      "semibold":  { "$value": 600, "$type": "fontWeight" },
+      "bold":      { "$value": 700, "$type": "fontWeight" }
+    },
+
+    "size": {
+      "$description": "Mobile-optimized type scale. Base = 16px.",
+      "2xs":    { "$value": "10px", "$type": "dimension" },
+      "xs":     { "$value": "12px", "$type": "dimension" },
+      "sm":     { "$value": "14px", "$type": "dimension" },
+      "base":   { "$value": "16px", "$type": "dimension" },
+      "lg":     { "$value": "18px", "$type": "dimension" },
+      "xl":     { "$value": "20px", "$type": "dimension" },
+      "2xl":    { "$value": "24px", "$type": "dimension" },
+      "3xl":    { "$value": "28px", "$type": "dimension" },
+      "4xl":    { "$value": "32px", "$type": "dimension" },
+      "5xl":    { "$value": "40px", "$type": "dimension" }
+    },
+
+    "lineHeight": {
+      "tight":    { "$value": "1.2",  "$type": "number", "$description": "Headlines, display text" },
+      "snug":     { "$value": "1.3",  "$type": "number", "$description": "Subheadings" },
+      "normal":   { "$value": "1.4",  "$type": "number", "$description": "Body text default" },
+      "relaxed":  { "$value": "1.5",  "$type": "number", "$description": "Long-form reading" },
+      "loose":    { "$value": "1.6",  "$type": "number", "$description": "Captions, small text for readability" }
+    },
+
+    "letterSpacing": {
+      "tighter":  { "$value": "-0.02em", "$type": "dimension" },
+      "tight":    { "$value": "-0.01em", "$type": "dimension" },
+      "normal":   { "$value": "0em",     "$type": "dimension" },
+      "wide":     { "$value": "0.02em",  "$type": "dimension" },
+      "wider":    { "$value": "0.04em",  "$type": "dimension" },
+      "widest":   { "$value": "0.08em",  "$type": "dimension", "$description": "Overlines, labels" }
+    }
+  },
+
+  "spacing": {
+    "$description": "4px base-unit spacing scale, optimized for mobile touch targets and layout.",
+    "0":   { "$value": "0px",   "$type": "dimension" },
+    "1":   { "$value": "4px",   "$type": "dimension" },
+    "2":   { "$value": "8px",   "$type": "dimension" },
+    "3":   { "$value": "12px",  "$type": "dimension" },
+    "4":   { "$value": "16px",  "$type": "dimension" },
+    "5":   { "$value": "20px",  "$type": "dimension" },
+    "6":   { "$value": "24px",  "$type": "dimension" },
+    "8":   { "$value": "32px",  "$type": "dimension" },
+    "10":  { "$value": "40px",  "$type": "dimension" },
+    "12":  { "$value": "48px",  "$type": "dimension" },
+    "16":  { "$value": "64px",  "$type": "dimension" },
+    "20":  { "$value": "80px",  "$type": "dimension" }
+  },
+
+  "radius": {
+    "$description": "Border radius scale for mobile UI components.",
+    "none":  { "$value": "0px",    "$type": "dimension" },
+    "xs":    { "$value": "4px",    "$type": "dimension" },
+    "sm":    { "$value": "8px",    "$type": "dimension" },
+    "md":    { "$value": "12px",   "$type": "dimension" },
+    "lg":    { "$value": "16px",   "$type": "dimension" },
+    "xl":    { "$value": "20px",   "$type": "dimension" },
+    "2xl":   { "$value": "24px",   "$type": "dimension" },
+    "full":  { "$value": "9999px", "$type": "dimension" }
+  },
+
+  "shadow": {
+    "$description": "Elevation shadows matching iOS/Android material patterns.",
+    "xs": {
+      "$value": "0px 1px 2px 0px rgba(20, 38, 65, 0.05)",
+      "$type": "shadow",
+      "$description": "Subtle lift. Cards at rest."
+    },
+    "sm": {
+      "$value": "0px 2px 4px -1px rgba(20, 38, 65, 0.06), 0px 1px 2px -1px rgba(20, 38, 65, 0.04)",
+      "$type": "shadow",
+      "$description": "Light elevation. List items, chips."
+    },
+    "md": {
+      "$value": "0px 4px 8px -2px rgba(20, 38, 65, 0.08), 0px 2px 4px -2px rgba(20, 38, 65, 0.04)",
+      "$type": "shadow",
+      "$description": "Medium elevation. Floating cards, dropdowns."
+    },
+    "lg": {
+      "$value": "0px 8px 16px -4px rgba(20, 38, 65, 0.10), 0px 4px 6px -4px rgba(20, 38, 65, 0.05)",
+      "$type": "shadow",
+      "$description": "High elevation. Modals, bottom sheets."
+    },
+    "xl": {
+      "$value": "0px 16px 32px -8px rgba(20, 38, 65, 0.14), 0px 8px 16px -8px rgba(20, 38, 65, 0.06)",
+      "$type": "shadow",
+      "$description": "Highest elevation. Overlays, toasts."
+    }
+  },
+
+  "opacity": {
+    "$description": "Opacity scale for overlays, disabled states, and layering.",
+    "0":    { "$value": "0",    "$type": "number" },
+    "5":    { "$value": "0.05", "$type": "number" },
+    "10":   { "$value": "0.10", "$type": "number" },
+    "20":   { "$value": "0.20", "$type": "number" },
+    "40":   { "$value": "0.40", "$type": "number" },
+    "60":   { "$value": "0.60", "$type": "number" },
+    "80":   { "$value": "0.80", "$type": "number" },
+    "100":  { "$value": "1",    "$type": "number" }
+  },
+
+  "duration": {
+    "$description": "Animation duration tokens for mobile transitions.",
+    "instant":  { "$value": "0ms",   "$type": "duration" },
+    "fast":     { "$value": "100ms", "$type": "duration" },
+    "normal":   { "$value": "200ms", "$type": "duration" },
+    "slow":     { "$value": "300ms", "$type": "duration" },
+    "slower":   { "$value": "500ms", "$type": "duration" }
+  },
+
+  "easing": {
+    "$description": "Easing curves for mobile animations.",
+    "default":     { "$value": "cubic-bezier(0.25, 0.1, 0.25, 1)",   "$type": "cubicBezier" },
+    "in":          { "$value": "cubic-bezier(0.42, 0, 1, 1)",        "$type": "cubicBezier" },
+    "out":         { "$value": "cubic-bezier(0, 0, 0.58, 1)",        "$type": "cubicBezier" },
+    "in-out":      { "$value": "cubic-bezier(0.42, 0, 0.58, 1)",     "$type": "cubicBezier" },
+    "spring":      { "$value": "cubic-bezier(0.175, 0.885, 0.32, 1.275)", "$type": "cubicBezier", "$description": "Bouncy spring for interactive elements." }
+  },
+
+  "border": {
+    "$description": "Border width tokens.",
+    "width": {
+      "none":   { "$value": "0px",   "$type": "dimension" },
+      "thin":   { "$value": "1px",   "$type": "dimension" },
+      "medium": { "$value": "1.5px", "$type": "dimension" },
+      "thick":  { "$value": "2px",   "$type": "dimension" }
+    }
+  },
+
+  "size": {
+    "$description": "Component sizing tokens for mobile touch targets.",
+    "icon": {
+      "xs": { "$value": "16px", "$type": "dimension" },
+      "sm": { "$value": "20px", "$type": "dimension" },
+      "md": { "$value": "24px", "$type": "dimension" },
+      "lg": { "$value": "32px", "$type": "dimension" },
+      "xl": { "$value": "40px", "$type": "dimension" }
+    },
+    "touch-target": {
+      "min": { "$value": "44px", "$type": "dimension", "$description": "Apple HIG minimum touch target." },
+      "comfortable": { "$value": "48px", "$type": "dimension", "$description": "Material Design recommended." }
+    },
+    "avatar": {
+      "xs": { "$value": "24px", "$type": "dimension" },
+      "sm": { "$value": "32px", "$type": "dimension" },
+      "md": { "$value": "40px", "$type": "dimension" },
+      "lg": { "$value": "56px", "$type": "dimension" },
+      "xl": { "$value": "72px", "$type": "dimension" }
+    }
+  }
+}

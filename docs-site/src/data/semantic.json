@@ -1,0 +1,269 @@
+{
+  "$description": "Insigneo Design System — Semantic Tokens. Maps primitives to usage contexts. Contains both Light and Dark mode values.",
+
+  "light": {
+    "$description": "Light mode semantic tokens. Default mode — matches brand guidelines.",
+
+    "color": {
+      "bg": {
+        "$description": "Background colors.",
+        "primary":     { "$value": "{color.static.white}",       "$type": "color", "$description": "Main app background." },
+        "secondary":   { "$value": "{color.brand.bone-blue}",    "$type": "color", "$description": "Secondary surface. Cards, sections." },
+        "tertiary":    { "$value": "{color.neutral.50}",         "$type": "color", "$description": "Tertiary background. Grouped content." },
+        "inverse":     { "$value": "{color.brand.navy-blue}",    "$type": "color", "$description": "Inverse background. Headers, hero sections." },
+        "accent":      { "$value": "{color.blue.50}",            "$type": "color", "$description": "Accent-tinted background. Highlights, banners." },
+        "overlay":     { "$value": "rgba(20, 38, 65, 0.5)",      "$type": "color", "$description": "Modal/sheet overlay scrim." }
+      },
+
+      "surface": {
+        "$description": "Surface/card colors with elevation levels.",
+        "default":    { "$value": "{color.static.white}",        "$type": "color", "$description": "Base card surface." },
+        "raised":     { "$value": "{color.static.white}",        "$type": "color", "$description": "Elevated card (with shadow)." },
+        "sunken":     { "$value": "{color.brand.bone-blue}",     "$type": "color", "$description": "Inset/recessed surface. Input fields." },
+        "disabled":   { "$value": "{color.neutral.50}",          "$type": "color", "$description": "Disabled surface." }
+      },
+
+      "text": {
+        "$description": "Text colors.",
+        "primary":     { "$value": "{color.brand.navy-blue}",    "$type": "color", "$description": "Primary text. Headings, body." },
+        "secondary":   { "$value": "{color.neutral.600}",        "$type": "color", "$description": "Secondary text. Subtitles, descriptions." },
+        "tertiary":    { "$value": "{color.neutral.400}",        "$type": "color", "$description": "Tertiary text. Placeholders, hints." },
+        "inverse":     { "$value": "{color.static.white}",       "$type": "color", "$description": "Text on dark/inverse backgrounds." },
+        "accent":      { "$value": "{color.brand.insigneo-blue}","$type": "color", "$description": "Accent text. Links, interactive labels." },
+        "disabled":    { "$value": "{color.neutral.300}",        "$type": "color", "$description": "Disabled text." },
+        "on-accent":   { "$value": "{color.static.white}",       "$type": "color", "$description": "Text on accent-colored backgrounds." }
+      },
+
+      "icon": {
+        "$description": "Icon colors.",
+        "primary":     { "$value": "{color.brand.navy-blue}",    "$type": "color" },
+        "secondary":   { "$value": "{color.neutral.500}",        "$type": "color" },
+        "accent":      { "$value": "{color.brand.insigneo-blue}","$type": "color" },
+        "inverse":     { "$value": "{color.static.white}",       "$type": "color" },
+        "disabled":    { "$value": "{color.neutral.300}",        "$type": "color" }
+      },
+
+      "border": {
+        "$description": "Border/divider colors.",
+        "default":     { "$value": "{color.neutral.200}",        "$type": "color", "$description": "Default border. Cards, inputs." },
+        "strong":      { "$value": "{color.neutral.300}",        "$type": "color", "$description": "Emphasized border." },
+        "subtle":      { "$value": "{color.neutral.100}",        "$type": "color", "$description": "Subtle divider lines." },
+        "accent":      { "$value": "{color.brand.insigneo-blue}","$type": "color", "$description": "Accent/focused border." },
+        "inverse":     { "$value": "rgba(255, 255, 255, 0.2)",   "$type": "color", "$description": "Border on dark backgrounds." }
+      },
+
+      "interactive": {
+        "$description": "Interactive element colors (buttons, links, controls).",
+        "default":     { "$value": "{color.brand.insigneo-blue}","$type": "color", "$description": "Default interactive color." },
+        "hover":       { "$value": "{color.blue.400}",           "$type": "color", "$description": "Hover/pressed state." },
+        "active":      { "$value": "{color.blue.500}",           "$type": "color", "$description": "Active/pressed state." },
+        "disabled":    { "$value": "{color.neutral.200}",        "$type": "color", "$description": "Disabled interactive." },
+        "focus-ring":  { "$value": "rgba(0, 179, 230, 0.4)",     "$type": "color", "$description": "Focus ring color." }
+      },
+
+      "status": {
+        "$description": "Status/feedback colors. Green = positive, Red = negative per brand guidelines (page 26).",
+        "success": {
+          "default":   { "$value": "{color.lime.300}",           "$type": "color" },
+          "bg":        { "$value": "{color.lime.100}",           "$type": "color" },
+          "text":      { "$value": "{color.lime.500}",           "$type": "color" }
+        },
+        "error": {
+          "default":   { "$value": "{color.coral.300}",          "$type": "color" },
+          "bg":        { "$value": "{color.coral.100}",          "$type": "color" },
+          "text":      { "$value": "{color.coral.500}",          "$type": "color" }
+        },
+        "warning": {
+          "default":   { "$value": "{color.amber.300}",          "$type": "color" },
+          "bg":        { "$value": "{color.amber.100}",          "$type": "color" },
+          "text":      { "$value": "{color.amber.500}",          "$type": "color" }
+        },
+        "info": {
+          "default":   { "$value": "{color.brand.insigneo-blue}","$type": "color" },
+          "bg":        { "$value": "{color.blue.50}",            "$type": "color" },
+          "text":      { "$value": "{color.blue.600}",           "$type": "color" }
+        }
+      },
+
+      "chart": {
+        "$description": "Chart/data visualization palette. 7 distinct colors for series differentiation.",
+        "1": { "$value": "{color.brand.insigneo-blue}", "$type": "color", "$description": "Primary chart series." },
+        "2": { "$value": "{color.teal.200}",            "$type": "color", "$description": "Second series." },
+        "3": { "$value": "{color.purple.400}",          "$type": "color", "$description": "Third series." },
+        "4": { "$value": "{color.amber.200}",           "$type": "color", "$description": "Fourth series." },
+        "5": { "$value": "{color.gold.200}",            "$type": "color", "$description": "Fifth series." },
+        "6": { "$value": "{color.brand.sky-blue}",      "$type": "color", "$description": "Sixth series." },
+        "7": { "$value": "{color.neutral.500}",         "$type": "color", "$description": "Seventh series." },
+        "positive": { "$value": "{color.lime.300}",     "$type": "color", "$description": "Positive performance indicator." },
+        "negative": { "$value": "{color.coral.300}",    "$type": "color", "$description": "Negative performance indicator." }
+      }
+    },
+
+    "typography": {
+      "$description": "Composite typography tokens for each hierarchy level.",
+
+      "display": {
+        "family":        { "$value": "{font.family.display}",       "$type": "fontFamily" },
+        "size":          { "$value": "{font.size.5xl}",             "$type": "dimension" },
+        "weight":        { "$value": "{font.weight.bold}",          "$type": "fontWeight" },
+        "lineHeight":    { "$value": "{font.lineHeight.tight}",     "$type": "number" },
+        "letterSpacing": { "$value": "{font.letterSpacing.tighter}","$type": "dimension" }
+      },
+      "h1": {
+        "family":        { "$value": "{font.family.primary}",       "$type": "fontFamily" },
+        "size":          { "$value": "{font.size.3xl}",             "$type": "dimension" },
+        "weight":        { "$value": "{font.weight.bold}",          "$type": "fontWeight" },
+        "lineHeight":    { "$value": "{font.lineHeight.tight}",     "$type": "number" },
+        "letterSpacing": { "$value": "{font.letterSpacing.tight}",  "$type": "dimension" }
+      },
+      "h2": {
+        "family":        { "$value": "{font.family.primary}",       "$type": "fontFamily" },
+        "size":          { "$value": "{font.size.2xl}",             "$type": "dimension" },
+        "weight":        { "$value": "{font.weight.semibold}",      "$type": "fontWeight" },
+        "lineHeight":    { "$value": "{font.lineHeight.snug}",      "$type": "number" },
+        "letterSpacing": { "$value": "{font.letterSpacing.tight}",  "$type": "dimension" }
+      },
+      "h3": {
+        "family":        { "$value": "{font.family.primary}",       "$type": "fontFamily" },
+        "size":          { "$value": "{font.size.xl}",              "$type": "dimension" },
+        "weight":        { "$value": "{font.weight.semibold}",      "$type": "fontWeight" },
+        "lineHeight":    { "$value": "{font.lineHeight.snug}",      "$type": "number" },
+        "letterSpacing": { "$value": "{font.letterSpacing.normal}", "$type": "dimension" }
+      },
+      "h4": {
+        "family":        { "$value": "{font.family.primary}",       "$type": "fontFamily" },
+        "size":          { "$value": "{font.size.lg}",              "$type": "dimension" },
+        "weight":        { "$value": "{font.weight.medium}",        "$type": "fontWeight" },
+        "lineHeight":    { "$value": "{font.lineHeight.snug}",      "$type": "number" },
+        "letterSpacing": { "$value": "{font.letterSpacing.normal}", "$type": "dimension" }
+      },
+      "body-lg": {
+        "family":        { "$value": "{font.family.primary}",       "$type": "fontFamily" },
+        "size":          { "$value": "{font.size.base}",            "$type": "dimension" },
+        "weight":        { "$value": "{font.weight.regular}",       "$type": "fontWeight" },
+        "lineHeight":    { "$value": "{font.lineHeight.relaxed}",   "$type": "number" },
+        "letterSpacing": { "$value": "{font.letterSpacing.normal}", "$type": "dimension" }
+      },
+      "body": {
+        "family":        { "$value": "{font.family.primary}",       "$type": "fontFamily" },
+        "size":          { "$value": "{font.size.sm}",              "$type": "dimension" },
+        "weight":        { "$value": "{font.weight.regular}",       "$type": "fontWeight" },
+        "lineHeight":    { "$value": "{font.lineHeight.normal}",    "$type": "number" },
+        "letterSpacing": { "$value": "{font.letterSpacing.normal}", "$type": "dimension" }
+      },
+      "caption": {
+        "family":        { "$value": "{font.family.primary}",       "$type": "fontFamily" },
+        "size":          { "$value": "{font.size.xs}",              "$type": "dimension" },
+        "weight":        { "$value": "{font.weight.regular}",       "$type": "fontWeight" },
+        "lineHeight":    { "$value": "{font.lineHeight.normal}",    "$type": "number" },
+        "letterSpacing": { "$value": "{font.letterSpacing.wide}",   "$type": "dimension" }
+      },
+      "overline": {
+        "family":        { "$value": "{font.family.primary}",       "$type": "fontFamily" },
+        "size":          { "$value": "{font.size.2xs}",             "$type": "dimension" },
+        "weight":        { "$value": "{font.weight.semibold}",      "$type": "fontWeight" },
+        "lineHeight":    { "$value": "{font.lineHeight.normal}",    "$type": "number" },
+        "letterSpacing": { "$value": "{font.letterSpacing.widest}", "$type": "dimension" }
+      },
+      "data": {
+        "$description": "For large numbers, metrics, KPI displays.",
+        "family":        { "$value": "{font.family.primary}",       "$type": "fontFamily" },
+        "size":          { "$value": "{font.size.4xl}",             "$type": "dimension" },
+        "weight":        { "$value": "{font.weight.light}",         "$type": "fontWeight" },
+        "lineHeight":    { "$value": "{font.lineHeight.tight}",     "$type": "number" },
+        "letterSpacing": { "$value": "{font.letterSpacing.tighter}","$type": "dimension" }
+      }
+    }
+  },
+
+  "dark": {
+    "$description": "Dark mode semantic tokens. Derived from existing brand palette — Navy Blue backgrounds, elevated surfaces.",
+
+    "color": {
+      "bg": {
+        "primary":     { "$value": "{color.blue.800}",            "$type": "color", "$description": "Main dark background." },
+        "secondary":   { "$value": "{color.blue.700}",            "$type": "color", "$description": "Elevated surface. Cards." },
+        "tertiary":    { "$value": "{color.neutral.800}",         "$type": "color", "$description": "Grouped content background." },
+        "inverse":     { "$value": "{color.brand.bone-blue}",     "$type": "color", "$description": "Inverse (light) background." },
+        "accent":      { "$value": "rgba(0, 179, 230, 0.12)",     "$type": "color", "$description": "Accent-tinted dark background." },
+        "overlay":     { "$value": "rgba(2, 23, 41, 0.7)",        "$type": "color", "$description": "Modal overlay scrim." }
+      },
+
+      "surface": {
+        "default":    { "$value": "{color.neutral.800}",          "$type": "color", "$description": "Base card surface." },
+        "raised":     { "$value": "{color.neutral.700}",          "$type": "color", "$description": "Elevated card." },
+        "sunken":     { "$value": "{color.blue.800}",             "$type": "color", "$description": "Input fields, recessed." },
+        "disabled":   { "$value": "{color.neutral.700}",          "$type": "color", "$description": "Disabled surface." }
+      },
+
+      "text": {
+        "primary":     { "$value": "{color.neutral.50}",          "$type": "color", "$description": "Primary text on dark." },
+        "secondary":   { "$value": "{color.neutral.300}",         "$type": "color", "$description": "Secondary text." },
+        "tertiary":    { "$value": "{color.neutral.500}",         "$type": "color", "$description": "Placeholders, hints." },
+        "inverse":     { "$value": "{color.brand.navy-blue}",     "$type": "color", "$description": "Text on light backgrounds." },
+        "accent":      { "$value": "{color.brand.sky-blue}",      "$type": "color", "$description": "Links, interactive text — brighter for dark bg." },
+        "disabled":    { "$value": "{color.neutral.600}",         "$type": "color", "$description": "Disabled text." },
+        "on-accent":   { "$value": "{color.blue.800}",            "$type": "color", "$description": "Text on accent-colored backgrounds." }
+      },
+
+      "icon": {
+        "primary":     { "$value": "{color.neutral.100}",         "$type": "color" },
+        "secondary":   { "$value": "{color.neutral.400}",         "$type": "color" },
+        "accent":      { "$value": "{color.brand.sky-blue}",      "$type": "color" },
+        "inverse":     { "$value": "{color.brand.navy-blue}",     "$type": "color" },
+        "disabled":    { "$value": "{color.neutral.600}",         "$type": "color" }
+      },
+
+      "border": {
+        "default":     { "$value": "{color.neutral.700}",         "$type": "color" },
+        "strong":      { "$value": "{color.neutral.600}",         "$type": "color" },
+        "subtle":      { "$value": "{color.neutral.700}",         "$type": "color" },
+        "accent":      { "$value": "{color.brand.sky-blue}",      "$type": "color" },
+        "inverse":     { "$value": "rgba(20, 38, 65, 0.4)",       "$type": "color" }
+      },
+
+      "interactive": {
+        "default":     { "$value": "{color.brand.sky-blue}",      "$type": "color", "$description": "Brighter on dark for contrast." },
+        "hover":       { "$value": "{color.blue.200}",            "$type": "color" },
+        "active":      { "$value": "{color.blue.100}",            "$type": "color" },
+        "disabled":    { "$value": "{color.neutral.700}",         "$type": "color" },
+        "focus-ring":  { "$value": "rgba(161, 227, 251, 0.4)",    "$type": "color" }
+      },
+
+      "status": {
+        "success": {
+          "default":   { "$value": "{color.lime.200}",            "$type": "color" },
+          "bg":        { "$value": "rgba(121, 184, 88, 0.15)",    "$type": "color" },
+          "text":      { "$value": "{color.lime.200}",            "$type": "color" }
+        },
+        "error": {
+          "default":   { "$value": "{color.coral.200}",           "$type": "color" },
+          "bg":        { "$value": "rgba(218, 89, 89, 0.15)",     "$type": "color" },
+          "text":      { "$value": "{color.coral.200}",           "$type": "color" }
+        },
+        "warning": {
+          "default":   { "$value": "{color.amber.200}",           "$type": "color" },
+          "bg":        { "$value": "rgba(241, 199, 124, 0.15)",   "$type": "color" },
+          "text":      { "$value": "{color.amber.200}",           "$type": "color" }
+        },
+        "info": {
+          "default":   { "$value": "{color.brand.sky-blue}",      "$type": "color" },
+          "bg":        { "$value": "rgba(0, 179, 230, 0.12)",     "$type": "color" },
+          "text":      { "$value": "{color.blue.200}",            "$type": "color" }
+        }
+      },
+
+      "chart": {
+        "1": { "$value": "{color.brand.sky-blue}",      "$type": "color" },
+        "2": { "$value": "{color.teal.200}",            "$type": "color" },
+        "3": { "$value": "{color.purple.200}",          "$type": "color" },
+        "4": { "$value": "{color.amber.200}",           "$type": "color" },
+        "5": { "$value": "{color.gold.200}",            "$type": "color" },
+        "6": { "$value": "{color.blue.200}",            "$type": "color" },
+        "7": { "$value": "{color.neutral.300}",         "$type": "color" },
+        "positive": { "$value": "{color.lime.200}",     "$type": "color" },
+        "negative": { "$value": "{color.coral.200}",    "$type": "color" }
+      }
+    }
+  }
+}

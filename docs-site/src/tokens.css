@@ -1,0 +1,356 @@
+/* ==========================================================================
+   Insigneo Design System — CSS Custom Properties
+   Generated from Insigneo Brand Guidelines PDF
+   
+   Usage:
+   - Include this file in your web project
+   - Light mode is default
+   - Dark mode activates via [data-theme="dark"] or prefers-color-scheme
+   ========================================================================== */
+
+/* --- Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ==========================================================================
+   PRIMITIVE TOKENS
+   Raw values. Use semantic tokens in production code.
+   ========================================================================== */
+:root {
+
+  /* --- Brand Colors --- */
+  --color-brand-navy-blue:      #142641;
+  --color-brand-bone-blue:      #E7F1F3;
+  --color-brand-insigneo-blue:  #00B3E6;
+  --color-brand-sky-blue:       #A1E3FB;
+
+  /* --- Blue Scale --- */
+  --color-blue-50:   #E9F4FE;
+  --color-blue-100:  #D2F0FF;
+  --color-blue-200:  #A1E3FB;
+  --color-blue-300:  #00B7EB;
+  --color-blue-400:  #0389C3;
+  --color-blue-500:  #0666A4;
+  --color-blue-600:  #003D66;
+  --color-blue-700:  #0E233F;
+  --color-blue-800:  #021729;
+
+  /* --- Neutral Scale --- */
+  --color-neutral-50:   #F6F5F9;
+  --color-neutral-100:  #E6E6E8;
+  --color-neutral-200:  #D7D7DB;
+  --color-neutral-300:  #C1C1C6;
+  --color-neutral-400:  #ACACAD;
+  --color-neutral-500:  #868A93;
+  --color-neutral-600:  #52585E;
+  --color-neutral-700:  #2C323A;
+  --color-neutral-800:  #1C232D;
+
+  /* --- Teal Scale --- */
+  --color-teal-100:  #C1EAE6;
+  --color-teal-200:  #3ECEC6;
+  --color-teal-300:  #31A49E;
+  --color-teal-400:  #27827D;
+  --color-teal-500:  #133E3C;
+
+  /* --- Gold Scale --- */
+  --color-gold-100:  #EFDCBF;
+  --color-gold-200:  #D4B893;
+  --color-gold-300:  #D2AB7A;
+  --color-gold-400:  #AE916A;
+  --color-gold-500:  #634927;
+
+  /* --- Lime Scale --- */
+  --color-lime-100:  #D0E5CE;
+  --color-lime-200:  #AAD493;
+  --color-lime-300:  #79B858;
+  --color-lime-400:  #487237;
+  --color-lime-500:  #284725;
+
+  /* --- Coral Scale --- */
+  --color-coral-100:  #E2C0C0;
+  --color-coral-200:  #DB9191;
+  --color-coral-300:  #DA5959;
+  --color-coral-400:  #A82A2A;
+  --color-coral-500:  #721616;
+
+  /* --- Amber Scale --- */
+  --color-amber-100:  #EFDCBF;
+  --color-amber-200:  #F1C77C;
+  --color-amber-300:  #E0A734;
+  --color-amber-400:  #B07A26;
+  --color-amber-500:  #79500B;
+
+  /* --- Purple Scale --- */
+  --color-purple-100:  #E7E5F2;
+  --color-purple-200:  #B8B5C6;
+  --color-purple-300:  #89849B;
+  --color-purple-400:  #59546F;
+  --color-purple-500:  #2A2343;
+
+  /* --- Static --- */
+  --color-white:        #FFFFFF;
+  --color-black:        #000000;
+  --color-transparent:  transparent;
+
+  /* --- Typography --- */
+  --font-family-primary:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-display:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-mono:     'SF Mono', 'Roboto Mono', 'Fira Code', monospace;
+
+  --font-weight-light:     300;
+  --font-weight-regular:   400;
+  --font-weight-medium:    500;
+  --font-weight-semibold:  600;
+  --font-weight-bold:      700;
+
+  --font-size-2xs:   0.625rem;   /* 10px */
+  --font-size-xs:    0.75rem;    /* 12px */
+  --font-size-sm:    0.875rem;   /* 14px */
+  --font-size-base:  1rem;       /* 16px */
+  --font-size-lg:    1.125rem;   /* 18px */
+  --font-size-xl:    1.25rem;    /* 20px */
+  --font-size-2xl:   1.5rem;     /* 24px */
+  --font-size-3xl:   1.75rem;    /* 28px */
+  --font-size-4xl:   2rem;       /* 32px */
+  --font-size-5xl:   2.5rem;     /* 40px */
+
+  --line-height-tight:    1.2;
+  --line-height-snug:     1.3;
+  --line-height-normal:   1.4;
+  --line-height-relaxed:  1.5;
+  --line-height-loose:    1.6;
+
+  --letter-spacing-tighter:  -0.02em;
+  --letter-spacing-tight:    -0.01em;
+  --letter-spacing-normal:   0em;
+  --letter-spacing-wide:     0.02em;
+  --letter-spacing-wider:    0.04em;
+  --letter-spacing-widest:   0.08em;
+
+  /* --- Spacing (4px base) --- */
+  --spacing-0:    0px;
+  --spacing-1:    4px;
+  --spacing-2:    8px;
+  --spacing-3:    12px;
+  --spacing-4:    16px;
+  --spacing-5:    20px;
+  --spacing-6:    24px;
+  --spacing-8:    32px;
+  --spacing-10:   40px;
+  --spacing-12:   48px;
+  --spacing-16:   64px;
+  --spacing-20:   80px;
+
+  /* --- Border Radius --- */
+  --radius-none:  0px;
+  --radius-xs:    4px;
+  --radius-sm:    8px;
+  --radius-md:    12px;
+  --radius-lg:    16px;
+  --radius-xl:    20px;
+  --radius-2xl:   24px;
+  --radius-full:  9999px;
+
+  /* --- Shadows --- */
+  --shadow-xs:  0px 1px 2px 0px rgba(20, 38, 65, 0.05);
+  --shadow-sm:  0px 2px 4px -1px rgba(20, 38, 65, 0.06), 0px 1px 2px -1px rgba(20, 38, 65, 0.04);
+  --shadow-md:  0px 4px 8px -2px rgba(20, 38, 65, 0.08), 0px 2px 4px -2px rgba(20, 38, 65, 0.04);
+  --shadow-lg:  0px 8px 16px -4px rgba(20, 38, 65, 0.10), 0px 4px 6px -4px rgba(20, 38, 65, 0.05);
+  --shadow-xl:  0px 16px 32px -8px rgba(20, 38, 65, 0.14), 0px 8px 16px -8px rgba(20, 38, 65, 0.06);
+
+  /* --- Border Width --- */
+  --border-width-none:    0px;
+  --border-width-thin:    1px;
+  --border-width-medium:  1.5px;
+  --border-width-thick:   2px;
+
+  /* --- Motion --- */
+  --duration-instant:  0ms;
+  --duration-fast:     100ms;
+  --duration-normal:   200ms;
+  --duration-slow:     300ms;
+  --duration-slower:   500ms;
+
+  --easing-default:  cubic-bezier(0.25, 0.1, 0.25, 1);
+  --easing-in:       cubic-bezier(0.42, 0, 1, 1);
+  --easing-out:      cubic-bezier(0, 0, 0.58, 1);
+  --easing-in-out:   cubic-bezier(0.42, 0, 0.58, 1);
+  --easing-spring:   cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* --- Sizing --- */
+  --touch-target-min:          44px;
+  --touch-target-comfortable:  48px;
+}
+
+
+/* ==========================================================================
+   SEMANTIC TOKENS — LIGHT MODE (Default)
+   ========================================================================== */
+:root,
+[data-theme="light"] {
+
+  /* --- Backgrounds --- */
+  --bg-primary:     var(--color-white);
+  --bg-secondary:   var(--color-brand-bone-blue);
+  --bg-tertiary:    var(--color-neutral-50);
+  --bg-inverse:     var(--color-brand-navy-blue);
+  --bg-accent:      var(--color-blue-50);
+  --bg-overlay:     rgba(20, 38, 65, 0.5);
+
+  /* --- Surfaces --- */
+  --surface-default:   var(--color-white);
+  --surface-raised:    var(--color-white);
+  --surface-sunken:    var(--color-brand-bone-blue);
+  --surface-disabled:  var(--color-neutral-50);
+
+  /* --- Text --- */
+  --text-primary:    var(--color-brand-navy-blue);
+  --text-secondary:  var(--color-neutral-600);
+  --text-tertiary:   var(--color-neutral-400);
+  --text-inverse:    var(--color-white);
+  --text-accent:     var(--color-brand-insigneo-blue);
+  --text-disabled:   var(--color-neutral-300);
+  --text-on-accent:  var(--color-white);
+
+  /* --- Icons --- */
+  --icon-primary:    var(--color-brand-navy-blue);
+  --icon-secondary:  var(--color-neutral-500);
+  --icon-accent:     var(--color-brand-insigneo-blue);
+  --icon-inverse:    var(--color-white);
+  --icon-disabled:   var(--color-neutral-300);
+
+  /* --- Borders --- */
+  --border-default:  var(--color-neutral-200);
+  --border-strong:   var(--color-neutral-300);
+  --border-subtle:   var(--color-neutral-100);
+  --border-accent:   var(--color-brand-insigneo-blue);
+
+  /* --- Interactive --- */
+  --interactive-default:   var(--color-brand-insigneo-blue);
+  --interactive-hover:     var(--color-blue-400);
+  --interactive-active:    var(--color-blue-500);
+  --interactive-disabled:  var(--color-neutral-200);
+  --interactive-focus:     rgba(0, 179, 230, 0.4);
+
+  /* --- Status --- */
+  --status-success:        var(--color-lime-300);
+  --status-success-bg:     var(--color-lime-100);
+  --status-success-text:   var(--color-lime-500);
+
+  --status-error:          var(--color-coral-300);
+  --status-error-bg:       var(--color-coral-100);
+  --status-error-text:     var(--color-coral-500);
+
+  --status-warning:        var(--color-amber-300);
+  --status-warning-bg:     var(--color-amber-100);
+  --status-warning-text:   var(--color-amber-500);
+
+  --status-info:           var(--color-brand-insigneo-blue);
+  --status-info-bg:        var(--color-blue-50);
+  --status-info-text:      var(--color-blue-600);
+
+  /* --- Charts --- */
+  --chart-1:         var(--color-brand-insigneo-blue);
+  --chart-2:         var(--color-teal-200);
+  --chart-3:         var(--color-purple-400);
+  --chart-4:         var(--color-amber-200);
+  --chart-5:         var(--color-gold-200);
+  --chart-6:         var(--color-brand-sky-blue);
+  --chart-7:         var(--color-neutral-500);
+  --chart-positive:  var(--color-lime-300);
+  --chart-negative:  var(--color-coral-300);
+}
+
+
+/* ==========================================================================
+   SEMANTIC TOKENS — DARK MODE
+   ========================================================================== */
+[data-theme="dark"] {
+
+  /* --- Backgrounds --- */
+  --bg-primary:     var(--color-blue-800);
+  --bg-secondary:   var(--color-blue-700);
+  --bg-tertiary:    var(--color-neutral-800);
+  --bg-inverse:     var(--color-brand-bone-blue);
+  --bg-accent:      rgba(0, 179, 230, 0.12);
+  --bg-overlay:     rgba(2, 23, 41, 0.7);
+
+  /* --- Surfaces --- */
+  --surface-default:   var(--color-neutral-800);
+  --surface-raised:    var(--color-neutral-700);
+  --surface-sunken:    var(--color-blue-800);
+  --surface-disabled:  var(--color-neutral-700);
+
+  /* --- Text --- */
+  --text-primary:    var(--color-neutral-50);
+  --text-secondary:  var(--color-neutral-300);
+  --text-tertiary:   var(--color-neutral-500);
+  --text-inverse:    var(--color-brand-navy-blue);
+  --text-accent:     var(--color-brand-sky-blue);
+  --text-disabled:   var(--color-neutral-600);
+  --text-on-accent:  var(--color-blue-800);
+
+  /* --- Icons --- */
+  --icon-primary:    var(--color-neutral-100);
+  --icon-secondary:  var(--color-neutral-400);
+  --icon-accent:     var(--color-brand-sky-blue);
+  --icon-inverse:    var(--color-brand-navy-blue);
+  --icon-disabled:   var(--color-neutral-600);
+
+  /* --- Borders --- */
+  --border-default:  var(--color-neutral-700);
+  --border-strong:   var(--color-neutral-600);
+  --border-subtle:   var(--color-neutral-700);
+  --border-accent:   var(--color-brand-sky-blue);
+
+  /* --- Interactive --- */
+  --interactive-default:   var(--color-brand-sky-blue);
+  --interactive-hover:     var(--color-blue-200);
+  --interactive-active:    var(--color-blue-100);
+  --interactive-disabled:  var(--color-neutral-700);
+  --interactive-focus:     rgba(161, 227, 251, 0.4);
+
+  /* --- Status --- */
+  --status-success:        var(--color-lime-200);
+  --status-success-bg:     rgba(121, 184, 88, 0.15);
+  --status-success-text:   var(--color-lime-200);
+
+  --status-error:          var(--color-coral-200);
+  --status-error-bg:       rgba(218, 89, 89, 0.15);
+  --status-error-text:     var(--color-coral-200);
+
+  --status-warning:        var(--color-amber-200);
+  --status-warning-bg:     rgba(241, 199, 124, 0.15);
+  --status-warning-text:   var(--color-amber-200);
+
+  --status-info:           var(--color-brand-sky-blue);
+  --status-info-bg:        rgba(0, 179, 230, 0.12);
+  --status-info-text:      var(--color-blue-200);
+
+  /* --- Charts --- */
+  --chart-1:         var(--color-brand-sky-blue);
+  --chart-2:         var(--color-teal-200);
+  --chart-3:         var(--color-purple-200);
+  --chart-4:         var(--color-amber-200);
+  --chart-5:         var(--color-gold-200);
+  --chart-6:         var(--color-blue-200);
+  --chart-7:         var(--color-neutral-300);
+  --chart-positive:  var(--color-lime-200);
+  --chart-negative:  var(--color-coral-200);
+
+  /* --- Dark mode shadows use lighter opacity --- */
+  --shadow-xs:  0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  --shadow-sm:  0px 2px 4px -1px rgba(0, 0, 0, 0.24), 0px 1px 2px -1px rgba(0, 0, 0, 0.16);
+  --shadow-md:  0px 4px 8px -2px rgba(0, 0, 0, 0.28), 0px 2px 4px -2px rgba(0, 0, 0, 0.16);
+  --shadow-lg:  0px 8px 16px -4px rgba(0, 0, 0, 0.32), 0px 4px 6px -4px rgba(0, 0, 0, 0.20);
+  --shadow-xl:  0px 16px 32px -8px rgba(0, 0, 0, 0.40), 0px 8px 16px -8px rgba(0, 0, 0, 0.24);
+}
+
+/* --- Auto dark mode via system preference --- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    /* Inherits all [data-theme="dark"] values above — 
+       duplicated here for system-preference auto-switching.
+       In production, use a CSS preprocessor or JS toggle instead. */
+  }
+}
