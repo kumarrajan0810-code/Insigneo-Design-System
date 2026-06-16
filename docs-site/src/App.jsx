@@ -155,11 +155,17 @@ function renderColorGroup(title, colorObj, prefix = '') {
 }
 
 function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(() => window.matchMedia('(max-width: 1024px)').matches);
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    const mediaQuery = window.matchMedia('(max-width: 1024px)');
+    const handleResize = (e) => setIsMobile(e.matches);
+    
+    // Initial check
+    setIsMobile(mediaQuery.matches);
+    
+    // Listener
+    mediaQuery.addEventListener('change', handleResize);
+    return () => mediaQuery.removeEventListener('change', handleResize);
   }, []);
   return isMobile;
 }
