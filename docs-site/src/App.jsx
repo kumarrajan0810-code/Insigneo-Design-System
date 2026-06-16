@@ -99,14 +99,15 @@ function DeviceMockupDisplay({ isDark, isMobile }) {
   const screenRight = isDark ? dark3 : light3;
   return (
     <div style={{
-      position: 'relative', width: isMobile ? '300px' : '800px', height: isMobile ? '400px' : '700px', perspective: '1400px', margin: '0 auto',
+      position: 'relative', width: '100%', maxWidth: '800px', height: isMobile ? '320px' : '700px', perspective: '1400px', margin: '0 auto',
       display: 'flex', alignItems: 'center', justifyContent: 'center',
-      transform: isMobile ? 'scale(0.8)' : 'none',
+      transform: isMobile ? 'scale(0.5)' : 'none',
+      transformOrigin: 'top center',
       marginTop: isMobile ? 'var(--spacing-8)' : 0
     }}>
-      {!isMobile && <PhoneMockup screen={screenLeft} isDark={isDark} angle="25deg" zIndex={1} scale={0.85} translateX="-240px" />}
-      {!isMobile && <PhoneMockup screen={screenRight} isDark={isDark} angle="-25deg" zIndex={1} scale={0.85} translateX="240px" />}
-      <PhoneMockup screen={screenCenter} isDark={isDark} angle="0deg" zIndex={2} scale={isMobile ? 0.9 : 1.05} translateX="0px" />
+      <PhoneMockup screen={screenLeft} isDark={isDark} angle="25deg" zIndex={1} scale={0.85} translateX="-240px" />
+      <PhoneMockup screen={screenRight} isDark={isDark} angle="-25deg" zIndex={1} scale={0.85} translateX="240px" />
+      <PhoneMockup screen={screenCenter} isDark={isDark} angle="0deg" zIndex={2} scale={1.05} translateX="0px" />
     </div>
   );
 }
@@ -244,8 +245,8 @@ export default function App() {
         )}
         
         {/* HERO */}
-        <section id="hero" style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', justifyContent: 'space-between', marginBottom: '128px' }}>
-          <div style={{ maxWidth: '600px', width: '100%', textAlign: isMobile ? 'center' : 'left', margin: isMobile ? '0 auto' : 0 }}>
+        <section id="hero" style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', justifyContent: 'space-between', marginBottom: isMobile ? 'var(--spacing-16)' : '128px' }}>
+          <div style={{ maxWidth: '600px', width: '100%', textAlign: isMobile ? 'center' : 'left', margin: isMobile ? '0 auto var(--spacing-8)' : 0 }}>
             <h1 style={{ fontSize: isMobile ? '40px' : '64px', fontWeight: 'var(--font-weight-bold)', lineHeight: 1, letterSpacing: 'var(--letter-spacing-tighter)', marginBottom: 'var(--spacing-6)' }}>
               Atomic Design<br/>Architecture.
             </h1>
@@ -256,7 +257,7 @@ export default function App() {
           <DeviceMockupDisplay isDark={isDark} isMobile={isMobile} />
         </section>
 
-        <hr style={{ border: 'none', borderTop: '1px solid var(--border-subtle)', margin: '160px 0' }} />
+        <hr style={{ border: 'none', borderTop: '1px solid var(--border-subtle)', margin: isMobile ? 'var(--spacing-16) 0' : '160px 0' }} />
 
         {/* --- PRIMITIVES --- */}
         <section id="primitive-colors" style={{ marginBottom: '128px' }}>
@@ -348,7 +349,7 @@ export default function App() {
           </div>
         </section>
 
-        <hr style={{ border: 'none', borderTop: '1px solid var(--border-subtle)', margin: '160px 0' }} />
+        <hr style={{ border: 'none', borderTop: '1px solid var(--border-subtle)', margin: isMobile ? 'var(--spacing-16) 0' : '160px 0' }} />
 
         {/* --- SEMANTICS --- */}
         <section id="semantic-colors" style={{ marginBottom: '128px' }}>
@@ -403,7 +404,7 @@ export default function App() {
           </div>
         </section>
 
-        <hr style={{ border: 'none', borderTop: '1px solid var(--border-subtle)', margin: '160px 0' }} />
+        <hr style={{ border: 'none', borderTop: '1px solid var(--border-subtle)', margin: isMobile ? 'var(--spacing-16) 0' : '160px 0' }} />
 
         {/* --- COMPONENTS --- */}
         <section id="components" style={{ marginBottom: '128px' }}>
