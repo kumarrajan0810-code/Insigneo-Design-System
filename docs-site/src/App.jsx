@@ -93,18 +93,20 @@ function PhoneMockup({ screen, isDark, angle, zIndex, scale, translateX }) {
 }
 
 // --- DEVICE MOCKUP PRESENTATION ---
-function DeviceMockupDisplay({ isDark }) {
+function DeviceMockupDisplay({ isDark, isMobile }) {
   const screenLeft = isDark ? dark2 : light2;
   const screenCenter = isDark ? dark1 : light1;
   const screenRight = isDark ? dark3 : light3;
   return (
     <div style={{
-      position: 'relative', width: '800px', height: '700px', perspective: '1400px', margin: '0 auto',
-      display: 'flex', alignItems: 'center', justifyContent: 'center'
+      position: 'relative', width: isMobile ? '300px' : '800px', height: isMobile ? '400px' : '700px', perspective: '1400px', margin: '0 auto',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      transform: isMobile ? 'scale(0.8)' : 'none',
+      marginTop: isMobile ? 'var(--spacing-8)' : 0
     }}>
-      <PhoneMockup screen={screenLeft} isDark={isDark} angle="25deg" zIndex={1} scale={0.85} translateX="-240px" />
-      <PhoneMockup screen={screenRight} isDark={isDark} angle="-25deg" zIndex={1} scale={0.85} translateX="240px" />
-      <PhoneMockup screen={screenCenter} isDark={isDark} angle="0deg" zIndex={2} scale={1.05} translateX="0px" />
+      {!isMobile && <PhoneMockup screen={screenLeft} isDark={isDark} angle="25deg" zIndex={1} scale={0.85} translateX="-240px" />}
+      {!isMobile && <PhoneMockup screen={screenRight} isDark={isDark} angle="-25deg" zIndex={1} scale={0.85} translateX="240px" />}
+      <PhoneMockup screen={screenCenter} isDark={isDark} angle="0deg" zIndex={2} scale={isMobile ? 0.9 : 1.05} translateX="0px" />
     </div>
   );
 }
@@ -152,9 +154,21 @@ function renderColorGroup(title, colorObj, prefix = '') {
   );
 }
 
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  return isMobile;
+}
+
 // --- MAIN APP ---
 export default function App() {
   const [isDark, setIsDark] = useState(false);
+  const isMobile = useIsMobile();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
@@ -167,10 +181,17 @@ export default function App() {
     }}>
       
       {/* SIDEBAR */}
+      {isMobile && isMenuOpen && (
+        <div 
+          style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.5)', zIndex: 90 }}
+          onClick={() => setIsMenuOpen(false)}
+        />
+      )}
       <aside style={{
-        width: '280px', position: 'fixed', top: 0, left: 0, bottom: 0,
+        width: '280px', position: 'fixed', top: 0, left: isMobile ? (isMenuOpen ? 0 : '-100%') : 0, bottom: 0,
         background: 'var(--surface-default)', borderRight: '1px solid var(--border-subtle)',
-        padding: 'var(--spacing-8)', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 'var(--spacing-8)', zIndex: 100
+        padding: 'var(--spacing-8)', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 'var(--spacing-8)', 
+        zIndex: 100, transition: 'left 0.3s ease'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-4)' }}>
           <img src={logoUrl} alt="Logo" style={{ height: '24px' }} />
@@ -197,19 +218,36 @@ export default function App() {
       </aside>
 
       {/* MAIN CONTENT */}
-      <main style={{ marginLeft: '280px', flex: 1, padding: 'var(--spacing-20) var(--spacing-16)' }}>
+      <main style={{ 
+        marginLeft: isMobile ? 0 : '280px', 
+        flex: 1, 
+        padding: isMobile ? 'var(--spacing-8)' : 'var(--spacing-20) var(--spacing-16)',
+        width: isMobile ? '100%' : 'calc(100% - 280px)',
+        boxSizing: 'border-box'
+      }}>
+        {isMobile && (
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 'var(--spacing-8)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-2)' }}>
+              <img src={logoUrl} alt="Logo" style={{ height: '24px' }} />
+              <div style={{ fontWeight: 'var(--font-weight-bold)', fontSize: 'var(--font-size-sm)' }}>Design System</div>
+            </div>
+            <button onClick={() => setIsMenuOpen(true)} style={{ background: 'none', border: 'none', fontSize: '24px', cursor: 'pointer', color: 'var(--text-primary)' }}>
+              ☰
+            </button>
+          </div>
+        )}
         
         {/* HERO */}
-        <section id="hero" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '128px' }}>
-          <div style={{ maxWidth: '600px' }}>
-            <h1 style={{ fontSize: '64px', fontWeight: 'var(--font-weight-bold)', lineHeight: 1, letterSpacing: 'var(--letter-spacing-tighter)', marginBottom: 'var(--spacing-6)' }}>
+        <section id="hero" style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', justifyContent: 'space-between', marginBottom: '128px' }}>
+          <div style={{ maxWidth: '600px', width: '100%', textAlign: isMobile ? 'center' : 'left', margin: isMobile ? '0 auto' : 0 }}>
+            <h1 style={{ fontSize: isMobile ? '40px' : '64px', fontWeight: 'var(--font-weight-bold)', lineHeight: 1, letterSpacing: 'var(--letter-spacing-tighter)', marginBottom: 'var(--spacing-6)' }}>
               Atomic Design<br/>Architecture.
             </h1>
-            <p style={{ fontSize: 'var(--font-size-xl)', color: 'var(--text-secondary)', lineHeight: 'var(--line-height-relaxed)' }}>
+            <p style={{ fontSize: isMobile ? 'var(--font-size-lg)' : 'var(--font-size-xl)', color: 'var(--text-secondary)', lineHeight: 'var(--line-height-relaxed)' }}>
               The comprehensive UI Kit documenting every primitive, semantic, and component token for the Insigneo ecosystem.
             </p>
           </div>
-          <DeviceMockupDisplay isDark={isDark} />
+          <DeviceMockupDisplay isDark={isDark} isMobile={isMobile} />
         </section>
 
         <hr style={{ border: 'none', borderTop: '1px solid var(--border-subtle)', margin: '160px 0' }} />
@@ -228,7 +266,7 @@ export default function App() {
           <h2 style={{ fontSize: 'var(--font-size-4xl)', fontWeight: 'var(--font-weight-bold)', marginBottom: 'var(--spacing-4)' }}>Spacing & Sizing</h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--font-size-lg)', marginBottom: 'var(--spacing-12)' }}>The foundational grid and measurement system.</p>
           
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-16)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 'var(--spacing-16)' }}>
             <div>
               <h4 style={{ fontSize: 'var(--font-size-xl)', fontWeight: 'var(--font-weight-bold)', marginBottom: 'var(--spacing-6)' }}>Spacing</h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-4)' }}>
@@ -269,7 +307,7 @@ export default function App() {
         <section id="primitive-shadows" style={{ marginBottom: '128px' }}>
           <h2 style={{ fontSize: 'var(--font-size-4xl)', fontWeight: 'var(--font-weight-bold)', marginBottom: 'var(--spacing-4)' }}>Shadows & Radii</h2>
           
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-16)', marginTop: 'var(--spacing-12)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 'var(--spacing-16)', marginTop: 'var(--spacing-12)' }}>
             <div>
               <h4 style={{ fontSize: 'var(--font-size-xl)', fontWeight: 'var(--font-weight-bold)', marginBottom: 'var(--spacing-6)' }}>Shadows (Elevation)</h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-6)' }}>
@@ -368,14 +406,14 @@ export default function App() {
             Highly specific tokens for individual components, mapped directly from semantics and primitives.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: 'var(--spacing-8)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-8)' }}>
             {Object.entries(components).filter(([k]) => !k.startsWith('$')).map(([compName, compData]) => (
               <div key={compName} style={{ background: 'var(--surface-default)', borderRadius: 'var(--radius-xl)', border: '1px solid var(--border-default)', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
                 <div style={{ background: 'var(--surface-sunken)', padding: 'var(--spacing-6)', borderBottom: '1px solid var(--border-subtle)' }}>
                   <h4 style={{ fontSize: 'var(--font-size-2xl)', fontWeight: 'var(--font-weight-bold)', textTransform: 'capitalize' }}>{compName}</h4>
                   {compData.$description && <p style={{ fontSize: 'var(--font-size-sm)', color: 'var(--text-secondary)', marginTop: 'var(--spacing-2)' }}>{compData.$description}</p>}
                 </div>
-                <div style={{ padding: 'var(--spacing-6)' }}>
+                <div style={{ padding: 'var(--spacing-6)', overflowX: 'auto' }}>
                   <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 'var(--font-size-sm)' }}>
                     <tbody>
                       {Object.entries(compData).filter(([k]) => !k.startsWith('$')).map(([propKey, propData]) => {
