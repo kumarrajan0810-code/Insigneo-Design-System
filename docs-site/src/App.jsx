@@ -99,11 +99,12 @@ function DeviceMockupDisplay({ isDark, isMobile }) {
   const screenRight = isDark ? dark3 : light3;
   return (
     <div style={{
-      position: 'relative', width: '100%', maxWidth: '800px', height: isMobile ? '320px' : '700px', perspective: '1400px', margin: '0 auto',
+      position: 'relative', width: '100%', maxWidth: '800px', height: '700px', perspective: '1400px', 
+      margin: isMobile ? '-170px auto' : '0 auto',
       display: 'flex', alignItems: 'center', justifyContent: 'center',
-      transform: isMobile ? 'scale(0.5)' : 'none',
-      transformOrigin: 'top center',
-      marginTop: isMobile ? 'var(--spacing-8)' : 0
+      transform: isMobile ? 'scale(0.45)' : 'none',
+      transformOrigin: 'center center',
+      zIndex: 1
     }}>
       <PhoneMockup screen={screenLeft} isDark={isDark} angle="25deg" zIndex={1} scale={0.85} translateX="-240px" />
       <PhoneMockup screen={screenRight} isDark={isDark} angle="-25deg" zIndex={1} scale={0.85} translateX="240px" />
