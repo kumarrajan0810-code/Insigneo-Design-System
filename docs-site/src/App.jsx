@@ -199,7 +199,7 @@ export default function App() {
         </div>
         <ThemeToggle isDark={isDark} toggle={() => setIsDark(!isDark)} />
         
-        <nav style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-2)' }}>
+        <nav style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-2)' }} onClick={() => isMobile && setIsMenuOpen(false)}>
           <div style={{ fontSize: 'var(--font-size-xs)', fontWeight: 'var(--font-weight-bold)', color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: 'var(--letter-spacing-wider)', marginBottom: 'var(--spacing-2)' }}>Overview</div>
           <a href="#hero" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: 'var(--font-size-sm)' }}>Introduction</a>
           
